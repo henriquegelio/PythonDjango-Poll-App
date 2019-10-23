@@ -1,0 +1,89 @@
+Comandos Django:
+
+Novo Projeto:
+-----------------------------------------
+- django-admin startproject <project-name>
+
+Executar servidor:
+--------------------------------------
+- python manage.py runserver
+- python manage.py runserver <port>
+ex:
+- python manage.py runserver 8080
+- python manage.py runserver 0:8080
+
+
+Novo App:
+-----------------------------------
+- python manage.py startapp <app_name>
+
+
+Executar alterações no banco:
+-----------------------------------
+- python manage.py migrate
+The migrate command looks at the INSTALLED_APPS setting and creates any necessary database tables according to the database settings in your mysite/settings.py
+
+- python manage.py makemigrations polls
+Creates the migration file for specific app
+
+- python manage.py sqlmigrate polls 0001 (number of migration file)
+Takes a migration number and return SQL equivalent
+
+
+Verificação de Integridade:
+---------------------------------
+- python manage.py check
+Verifica se tudo está OK antes de executar uma migração
+
+
+Abrir a shell do python no django:
+-----------------------------------
+- python manage.py shell
+
+
+Django e Banco de dados:
+------------------------------
+- Question.objects.all()
+Lista todos os objetos
+
+- q = Question(question_text="What's new?", pub_date=timezone.now())
+Creates a new Question object
+
+- q.save()
+Salva o objeto criado
+
+- Question.objects.filter(id=1)
+- Question.objects.filter(question_text__startswith='What')
+Filtra um objeto tipo question
+
+- current_year = timezone.now().year
+- Question.objects.get(pub_date__year=current_year)
+Get the object that was published this year
+
+- q.choice_set.create(choice_text = "Just hacking again", votes = 0)
+Cria uma choice para um objeto do tipo question
+
+
+Criar um superusuário na aplicação:
+---------------------------------------
+python manage.py createsuperuser
+
+
+GIT
+----------------------------------------
+- git init
+inicia um repositorio vazio no local desejado
+- git add --all
+adiciona os arquivos não versionados ao versionamento
+- git status
+verifica o status do versionamento no repositorio atual
+- git commit -m "mensagem"
+faz o commit passando a mensagem
+- git push
+faz o push para o repositório remote no github
+- git remote add origin <URL>
+Sets the new remote
+- git remote -v
+Verifies the new remote URL
+- git push origin master
+Pushes the changes in your local repo up to the remote you specified as the origin
