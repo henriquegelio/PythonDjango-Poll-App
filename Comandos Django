@@ -87,3 +87,11 @@ Sets the new remote
 Verifies the new remote URL
 - git push origin master
 Pushes the changes in your local repo up to the remote you specified as the origin
+- git clone <link_HTTPS>
+Clona um repositório git para a pasta atual, a partir do link de clone HTTPS obtido na interface web de git
+
+
+TEST
+----------------------------------------
+- python manage.py test <app>
+Executes the defined tests for an app
