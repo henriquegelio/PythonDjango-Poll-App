@@ -1,25 +1,36 @@
-Comandos Django:
+=============================================================================
+Django:
+=============================================================================
 
+-----------------------------------------
 Novo Projeto:
 -----------------------------------------
 - django-admin startproject <project-name>
+Cria um novo projeto na pasta atual
 
+
+-----------------------------------------
 Executar servidor:
---------------------------------------
+-----------------------------------------
 - python manage.py runserver
 - python manage.py runserver <port>
 ex:
 - python manage.py runserver 8080
 - python manage.py runserver 0:8080
 
+Executa o servidor na porta especificada
 
+
+-----------------------------------------
 Novo App:
------------------------------------
+-----------------------------------------
 - python manage.py startapp <app_name>
+cria um novo app dentro do projeto
 
 
+-----------------------------------------
 Executar alterações no banco:
------------------------------------
+-----------------------------------------
 - python manage.py migrate
 The migrate command looks at the INSTALLED_APPS setting and creates any necessary database tables according to the database settings in your mysite/settings.py
 
@@ -30,19 +41,23 @@ Creates the migration file for specific app
 Takes a migration number and return SQL equivalent
 
 
+-----------------------------------------
 Verificação de Integridade:
----------------------------------
+-----------------------------------------
 - python manage.py check
 Verifica se tudo está OK antes de executar uma migração
 
 
-Abrir a shell do python no django:
------------------------------------
+-----------------------------------------
+Shell do Python:
+-----------------------------------------
 - python manage.py shell
+Abre a sheel do python no Django
 
 
+-----------------------------------------
 Django e Banco de dados:
-------------------------------
+-----------------------------------------
 - Question.objects.all()
 Lista todos os objetos
 
@@ -64,13 +79,24 @@ Get the object that was published this year
 Cria uma choice para um objeto do tipo question
 
 
-Criar um superusuário na aplicação:
----------------------------------------
-python manage.py createsuperuser
+-----------------------------------------
+Admin e usuários:
+-----------------------------------------
+- python manage.py createsuperuser
+Cria um novo superusuario
 
 
+-----------------------------------------
+TEST
+-----------------------------------------
+- python manage.py test <app>
+Executes the defined tests for an app
+
+
+=========================================================================================
 GIT
-----------------------------------------
+=========================================================================================
+
 - git init
 inicia um repositorio vazio no local desejado
 - git add --all
@@ -91,7 +117,15 @@ Pushes the changes in your local repo up to the remote you specified as the orig
 Clona um repositório git para a pasta atual, a partir do link de clone HTTPS obtido na interface web de git
 
 
-TEST
-----------------------------------------
-- python manage.py test <app>
-Executes the defined tests for an app
+=============================================================================
+Pyenv:
+=============================================================================
+
+- pyenv virtualenv <python_version> <environment_name>
+Cria um novo ambiente vitual dentro da pasta .pyenv, com a versão python especificada
+
+- pyenv activate <environment_name>
+Ativa o ambiente virtual especificado
+
+- pyenv deactivate
+Desativa o ambiente virtual
